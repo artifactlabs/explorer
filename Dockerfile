@@ -6,4 +6,8 @@ RUN npm install
 
 COPY . .
 
-CMD ["npm", "start"]
+RUN ./node_modules/.bin/bower install --allow-root
+RUN ls app
+CMD ["npm", "run" , "begin"]
+
+EXPOSE 8000
